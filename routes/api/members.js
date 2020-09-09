@@ -56,4 +56,11 @@ router.put("/:id", (req, res) => {
     }
 })
 
+router.delete("/:id", (req, res) => {
+
+    members = members.filter(member => member.id !== Number(req.params.id))
+
+    res.send(members)
+})
+
 module.exports = router
